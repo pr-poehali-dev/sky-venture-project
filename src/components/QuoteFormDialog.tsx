@@ -52,14 +52,14 @@ export function QuoteFormDialog({ packageName, variant = "default", className, c
     <Dialog open={open} onOpenChange={setOpen}>
       <DialogTrigger asChild>
         <Button variant={variant} className={className}>
-          {children || "Запросить расчет"}
+          {children || "Записаться"}
         </Button>
       </DialogTrigger>
       <DialogContent className="sm:max-w-[500px] max-h-[90vh] overflow-y-auto">
         <DialogHeader>
-          <DialogTitle>Запросить расчет</DialogTitle>
+          <DialogTitle>Запись на маникюр</DialogTitle>
           <DialogDescription>
-            Заполните форму, и мы свяжемся с вами в ближайшее время для бесплатной консультации.
+            Заполните форму, и мы свяжемся с вами, чтобы подтвердить запись и удобное время.
           </DialogDescription>
         </DialogHeader>
         <form onSubmit={handleSubmit} className="space-y-4 mt-4">
@@ -99,41 +99,31 @@ export function QuoteFormDialog({ packageName, variant = "default", className, c
           </div>
 
           <div className="space-y-2">
-            <Label htmlFor="company">Компания (необязательно)</Label>
-            <Input
-              id="company"
-              value={formData.company}
-              onChange={(e) => setFormData({ ...formData, company: e.target.value })}
-              placeholder="Название компании"
-            />
-          </div>
-
-          <div className="space-y-2">
-            <Label htmlFor="package">Тариф *</Label>
+            <Label htmlFor="package">Услуга *</Label>
             <Select
               value={formData.package}
               onValueChange={(value) => setFormData({ ...formData, package: value })}
             >
               <SelectTrigger id="package">
-                <SelectValue placeholder="Выберите тариф" />
+                <SelectValue placeholder="Выберите услугу" />
               </SelectTrigger>
               <SelectContent>
-                <SelectItem value="Базовый">Базовый</SelectItem>
-                <SelectItem value="Про">Про</SelectItem>
-                <SelectItem value="Индивидуальный">Индивидуальный</SelectItem>
-                <SelectItem value="Еще не определился">Еще не определился</SelectItem>
+                <SelectItem value="Классика">Классика</SelectItem>
+                <SelectItem value="Маникюр + дизайн">Маникюр + дизайн</SelectItem>
+                <SelectItem value="Наращивание">Наращивание</SelectItem>
+                <SelectItem value="Еще не определилась">Еще не определилась</SelectItem>
               </SelectContent>
             </Select>
           </div>
 
           <div className="space-y-2">
-            <Label htmlFor="message">Описание проекта *</Label>
+            <Label htmlFor="message">Пожелания *</Label>
             <Textarea
               id="message"
               required
               value={formData.message}
               onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-              placeholder="Расскажите о проекте, пожеланиях и сроках..."
+              placeholder="Желаемый дизайн, оттенок и удобное время..."
               rows={4}
             />
           </div>

@@ -34,13 +34,13 @@ export function Navbar() {
               Услуги
             </a>
             <a href="#portfolio" className="text-sm font-medium hover:text-primary transition-colors">
-              Портфолио
+              Работы
             </a>
             <a href="#pricing" className="text-sm font-medium hover:text-primary transition-colors">
-              Тарифы
+              Цены
             </a>
             <a href="#contact" className="text-sm font-medium hover:text-primary transition-colors">
-              Контакты
+              Записаться
             </a>
           </div>
 
